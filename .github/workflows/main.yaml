@@ -1,0 +1,32 @@
+name: ci
+
+on:
+  - push
+  - pull_request
+
+env:
+  CI: true
+  PYTHON_VERSION: 3.12
+
+jobs:
+  # Build and deploy the documentation site to the gh-pages branch
+  deploy:
+    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # full history for the git date and author plugins
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+
+      - run: pip install -r requirements.txt
+
+      - run: |
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          mkdocs gh-deploy --force

@@ -1,0 +1,420 @@
+Started by user  Celestino
+Obtained Jenkinsfile from git https://github.com/insper-plat-projeto/pma-auth-service.git
+[Pipeline] Start of Pipeline
+[Pipeline] node
+Running on  in /var/jenkins_home/workspace/auth-service
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Declarative: Checkout SCM)
+[Pipeline] checkout
+Selected Git installation does not exist. Using Default
+The recommended git tool is: NONE
+using credential github-credential
+Cloning the remote Git repository
+Cloning repository https://github.com/insper-plat-projeto/pma-auth-service.git
+ > git init /var/jenkins_home/workspace/auth-service # timeout=10
+Fetching upstream changes from https://github.com/insper-plat-projeto/pma-auth-service.git
+ > git --version # timeout=10
+ > git --version # 'git version 2.47.3'
+using GIT_ASKPASS to set credentials 
+ > git fetch --tags --force --progress -- https://github.com/insper-plat-projeto/pma-auth-service.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git config remote.origin.url https://github.com/insper-plat-projeto/pma-auth-service.git # timeout=10
+ > git config --add remote.origin.fetch +refs/heads/*:refs/remotes/origin/* # timeout=10
+Avoid second fetch
+ > git rev-parse refs/remotes/origin/main^{commit} # timeout=10
+Checking out Revision e70adbf7cb82f218081534315a147c2a62a7531b (refs/remotes/origin/main)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f e70adbf7cb82f218081534315a147c2a62a7531b # timeout=10
+Commit message: "ci: reaproveita a base do trivy entre builds"
+First time build. Skipping changelog.
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Dependencies)
+[Pipeline] build
+Scheduling project: 
+Starting building:  #1
+Build  #1 completed: SUCCESS
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Build)
+[Pipeline] sh
++ mvn -B -DskipTests clean package
+WARNING: A terminally deprecated method in sun.misc.Unsafe has been called
+WARNING: sun.misc.Unsafe::objectFieldOffset has been called by com.google.common.util.concurrent.AbstractFuture$UnsafeAtomicHelper (file:/usr/share/maven/lib/guava.jar)
+WARNING: Please consider reporting this to the maintainers of class com.google.common.util.concurrent.AbstractFuture$UnsafeAtomicHelper
+WARNING: sun.misc.Unsafe::objectFieldOffset will be removed in a future release
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -------------------------< store:auth-service >-------------------------
+[INFO] Building auth-service 1.0.0
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-starter-webmvc/4.1.2/spring-boot-starter-webmvc-4.1.2.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-starter-webmvc/4.1.2/spring-boot-starter-webmvc-4.1.2.pom (2.9 kB at 2.2 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-starter-tomcat/4.1.2/spring-boot-starter-tomcat-4.1.2.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-starter-tomcat/4.1.2/spring-boot-starter-tomcat-4.1.2.pom (2.5 kB at 6.9 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-starter-tomcat-runtime/4.1.2/spring-boot-starter-tomcat-runtime-4.1.2.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-starter-tomcat-runtime/4.1.2/spring-boot-starter-tomcat-runtime-4.1.2.pom (3.7 kB at 8.3 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-tomcat/4.1.2/spring-boot-tomcat-4.1.2.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-tomcat/4.1.2/spring-boot-tomcat-4.1.2.pom (2.6 kB at 6.4 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/tomcat/embed/tomcat-embed-core/11.0.27/tomcat-embed-core-11.0.27.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/tomcat/embed/tomcat-embed-core/11.0.27/tomcat-embed-core-11.0.27.pom (1.8 kB at 3.4 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/tomcat/embed/tomcat-embed-websocket/11.0.27/tomcat-embed-websocket-11.0.27.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/tomcat/embed/tomcat-embed-websocket/11.0.27/tomcat-embed-websocket-11.0.27.pom (1.8 kB at 5.2 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-webmvc/4.1.2/spring-boot-webmvc-4.1.2.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-webmvc/4.1.2/spring-boot-webmvc-4.1.2.pom (2.6 kB at 6.5 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-servlet/4.1.2/spring-boot-servlet-4.1.2.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-servlet/4.1.2/spring-boot-servlet-4.1.2.pom (2.2 kB at 6.3 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/springframework/spring-webmvc/7.0.10/spring-webmvc-7.0.10.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/springframework/spring-webmvc/7.0.10/spring-webmvc-7.0.10.pom (3.0 kB at 8.3 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/io/jsonwebtoken/jjwt-api/maven-metadata.xml
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/io/jsonwebtoken/jjwt-api/maven-metadata.xml (1.1 kB at 2.0 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/io/jsonwebtoken/jjwt-api/0.13.0/jjwt-api-0.13.0.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/io/jsonwebtoken/jjwt-api/0.13.0/jjwt-api-0.13.0.pom (1.8 kB at 4.1 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/io/jsonwebtoken/jjwt-root/0.13.0/jjwt-root-0.13.0.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/io/jsonwebtoken/jjwt-root/0.13.0/jjwt-root-0.13.0.pom (37 kB at 78 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/io/jsonwebtoken/jjwt-impl/maven-metadata.xml
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/io/jsonwebtoken/jjwt-impl/maven-metadata.xml (1.1 kB at 1.7 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/io/jsonwebtoken/jjwt-impl/0.13.0/jjwt-impl-0.13.0.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/io/jsonwebtoken/jjwt-impl/0.13.0/jjwt-impl-0.13.0.pom (2.5 kB at 5.3 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/io/jsonwebtoken/jjwt-jackson/maven-metadata.xml
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/io/jsonwebtoken/jjwt-jackson/maven-metadata.xml (1.1 kB at 1.6 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/io/jsonwebtoken/jjwt-jackson/0.13.0/jjwt-jackson-0.13.0.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/io/jsonwebtoken/jjwt-jackson/0.13.0/jjwt-jackson-0.13.0.pom (2.9 kB at 4.4 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-databind/2.21.7/jackson-databind-2.21.7.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-databind/2.21.7/jackson-databind-2.21.7.pom (23 kB at 55 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/jackson-base/2.21.7/jackson-base-2.21.7.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/jackson-base/2.21.7/jackson-base-2.21.7.pom (13 kB at 28 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-core/2.21.7/jackson-core-2.21.7.pom
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-core/2.21.7/jackson-core-2.21.7.pom (9.7 kB at 16 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-starter-webmvc/4.1.2/spring-boot-starter-webmvc-4.1.2.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-starter-webmvc/4.1.2/spring-boot-starter-webmvc-4.1.2.jar (4.7 kB at 7.9 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-starter-tomcat/4.1.2/spring-boot-starter-tomcat-4.1.2.jar
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-starter-tomcat-runtime/4.1.2/spring-boot-starter-tomcat-runtime-4.1.2.jar
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/tomcat/embed/tomcat-embed-core/11.0.27/tomcat-embed-core-11.0.27.jar
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/apache/tomcat/embed/tomcat-embed-websocket/11.0.27/tomcat-embed-websocket-11.0.27.jar
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-tomcat/4.1.2/spring-boot-tomcat-4.1.2.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-starter-tomcat/4.1.2/spring-boot-starter-tomcat-4.1.2.jar (4.8 kB at 11 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-webmvc/4.1.2/spring-boot-webmvc-4.1.2.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-starter-tomcat-runtime/4.1.2/spring-boot-starter-tomcat-runtime-4.1.2.jar (4.7 kB at 5.7 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-servlet/4.1.2/spring-boot-servlet-4.1.2.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-tomcat/4.1.2/spring-boot-tomcat-4.1.2.jar (126 kB at 108 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/org/springframework/spring-webmvc/7.0.10/spring-webmvc-7.0.10.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-webmvc/4.1.2/spring-boot-webmvc-4.1.2.jar (175 kB at 142 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/io/jsonwebtoken/jjwt-api/0.13.0/jjwt-api-0.13.0.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/springframework/boot/spring-boot-servlet/4.1.2/spring-boot-servlet-4.1.2.jar (47 kB at 37 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/io/jsonwebtoken/jjwt-impl/0.13.0/jjwt-impl-0.13.0.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/tomcat/embed/tomcat-embed-websocket/11.0.27/tomcat-embed-websocket-11.0.27.jar (292 kB at 210 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/io/jsonwebtoken/jjwt-jackson/0.13.0/jjwt-jackson-0.13.0.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/io/jsonwebtoken/jjwt-api/0.13.0/jjwt-api-0.13.0.jar (141 kB at 73 kB/s)
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/io/jsonwebtoken/jjwt-jackson/0.13.0/jjwt-jackson-0.13.0.jar (9.4 kB at 4.9 kB/s)
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-databind/2.21.7/jackson-databind-2.21.7.jar
+[INFO] Downloading from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-core/2.21.7/jackson-core-2.21.7.jar
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/io/jsonwebtoken/jjwt-impl/0.13.0/jjwt-impl-0.13.0.jar (482 kB at 136 kB/s)
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/apache/tomcat/embed/tomcat-embed-core/11.0.27/tomcat-embed-core-11.0.27.jar (3.7 MB at 703 kB/s)
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-core/2.21.7/jackson-core-2.21.7.jar (595 kB at 113 kB/s)
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/org/springframework/spring-webmvc/7.0.10/spring-webmvc-7.0.10.jar (1.1 MB at 204 kB/s)
+[INFO] Downloaded from central: https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-databind/2.21.7/jackson-databind-2.21.7.jar (1.7 MB at 243 kB/s)
+[INFO] 
+[INFO] --- clean:3.5.0:clean (default-clean) @ auth-service ---
+[INFO] 
+[INFO] --- resources:3.5.0:resources (default-resources) @ auth-service ---
+[INFO] Copying 1 resource from src/main/resources to target/classes
+[INFO] Copying 0 resource from src/main/resources to target/classes
+[INFO] 
+[INFO] --- compiler:3.15.0:compile (default-compile) @ auth-service ---
+[INFO] Recompiling the module because of changed dependency.
+[INFO] Compiling 6 source files with javac [debug parameters release 25] to target/classes
+[INFO] 
+[INFO] --- resources:3.5.0:testResources (default-testResources) @ auth-service ---
+[INFO] skip non existing resourceDirectory /var/jenkins_home/workspace/auth-service/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.15.0:testCompile (default-testCompile) @ auth-service ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- surefire:3.5.6:test (default-test) @ auth-service ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- jar:3.5.1:jar (default-jar) @ auth-service ---
+[INFO] Building jar: /var/jenkins_home/workspace/auth-service/target/auth-service-1.0.0.jar
+[INFO] 
+[INFO] --- spring-boot:4.1.2:repackage (repackage) @ auth-service ---
+[INFO] Replacing main artifact /var/jenkins_home/workspace/auth-service/target/auth-service-1.0.0.jar with repackaged archive, adding nested dependencies in BOOT-INF/.
+[INFO] The original artifact has been renamed to /var/jenkins_home/workspace/auth-service/target/auth-service-1.0.0.jar.original
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  31.021 s
+[INFO] Finished at: 2026-11-21T01:19:02Z
+[INFO] ------------------------------------------------------------------------
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Scan Image)
+[Pipeline] sh
++ docker build -t auth:scan-1 .
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 29B 0.1s
+#1 transferring dockerfile: 139B 0.1s done
+#1 DONE 0.2s
+
+#2 [internal] load metadata for docker.io/library/eclipse-temurin:25
+#2 DONE 1.9s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 2B 0.1s done
+#3 DONE 0.1s
+
+#4 [1/2] FROM docker.io/library/eclipse-temurin:25@sha256:ce2ef9d2d67a68de5e196d4de9d743327c44a10b57fe02ec39f572c652cacfd3
+#4 resolve docker.io/library/eclipse-temurin:25@sha256:ce2ef9d2d67a68de5e196d4de9d743327c44a10b57fe02ec39f572c652cacfd3 0.1s done
+#4 DONE 0.1s
+
+#5 [internal] load build context
+#5 transferring context: 35.40MB 4.4s done
+#5 DONE 4.5s
+
+#4 [1/2] FROM docker.io/library/eclipse-temurin:25@sha256:ce2ef9d2d67a68de5e196d4de9d743327c44a10b57fe02ec39f572c652cacfd3
+#4 CACHED
+
+#6 [2/2] COPY target/*.jar /app.jar
+#6 DONE 0.1s
+
+#7 exporting to image
+#7 exporting layers
+#7 exporting layers 1.7s done
+#7 exporting manifest sha256:ef6c643c28f7a7639145edbaa812ae30f999c5d3debc919bf9ecc656e4fafbae 0.0s done
+#7 exporting config sha256:373409213d34afc5b8d3301425c47051de6bfa85ddfc4944be50e00a8cd2e087 0.0s done
+#7 exporting attestation manifest sha256:f600032180ec299b04c1a5673c5ea8504e3942ae400049328e49f019653602fd 0.1s done
+#7 exporting manifest list sha256:993aad74f7c7213c594592725b0b7887bd337bf7f9556c594c61465b3d02c4ab
+#7 exporting manifest list sha256:993aad74f7c7213c594592725b0b7887bd337bf7f9556c594c61465b3d02c4ab 0.0s done
+#7 naming to docker.io/library/auth:scan-1 done
+#7 unpacking to docker.io/library/auth:scan-1
+#7 unpacking to docker.io/library/auth:scan-1 0.3s done
+#7 DONE 2.3s
+[Pipeline] sh
++ docker run --rm -v /var/run/docker.sock:/var/run/docker.sock -v trivy-cache:/root/.cache aquasec/trivy:0.76.2 image --scanners vuln --severity HIGH,CRITICAL --ignore-unfixed --exit-code 1 auth:scan-1
+2026-11-21T01:19:22Z	INFO	[vuln] Vulnerability scanning is enabled
+2026-11-21T01:19:38Z	INFO	Detected OS	family="ubuntu" version="26.04"
+2026-11-21T01:19:38Z	INFO	[ubuntu] Detecting vulnerabilities...	os_version="26.04" pkg_num=115
+2026-11-21T01:19:38Z	INFO	Number of language-specific files	num=2
+2026-11-21T01:19:38Z	INFO	[gobinary] Detecting vulnerabilities...
+2026-11-21T01:19:38Z	INFO	[jar] Detecting vulnerabilities...
+2026-11-21T01:19:38Z	WARN	Using severities from other vendors for some vulnerabilities. Read https://trivy.dev/docs/v0.76/guide/scanner/vulnerability#severity-selection for details.
+
+Report Summary
+
+┌────────────────────────────┬──────────┬─────────────────┐
+│           Target           │   Type   │ Vulnerabilities │
+├────────────────────────────┼──────────┼─────────────────┤
+│ auth:scan-1 (ubuntu 26.04) │  ubuntu  │        0        │
+├────────────────────────────┼──────────┼─────────────────┤
+│ app.jar                    │   jar    │        0        │
+├────────────────────────────┼──────────┼─────────────────┤
+│ usr/bin/pebble             │ gobinary │        0        │
+└────────────────────────────┴──────────┴─────────────────┘
+Legend:
+- '-': Not scanned
+- '0': Clean (no security findings detected)
+
+Post stage
+[Pipeline] sh
++ docker rmi auth:scan-1
+Untagged: auth:scan-1
+Deleted: sha256:993aad74f7c7213c594592725b0b7887bd337bf7f9556c594c61465b3d02c4ab
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Build & Push Image)
+[Pipeline] withCredentials
+Masking supported pattern matches of $TOKEN
+[Pipeline] {
+[Pipeline] sh
++ + dockerecho **** login
+ -u dody16 --password-stdin
+
+WARNING! Your credentials are stored unencrypted in '/root/.docker/config.json'.
+Configure a credential helper to remove this warning. See
+https://docs.docker.com/go/credential-store/
+
+Login Succeeded
+[Pipeline] sh
++ docker buildx create --use --platform=linux/arm64,linux/amd64 --node multi-platform-builder-auth --name multi-platform-builder-auth
+multi-platform-builder-auth
+[Pipeline] sh
++ docker buildx build --platform=linux/arm64,linux/amd64 --push --tag dody16/auth:latest --tag dody16/auth:1 -f Dockerfile .
+#0 building with "multi-platform-builder-auth" instance using docker-container driver
+
+#1 [internal] booting buildkit
+#1 pulling image moby/buildkit:buildx-stable-1
+#1 pulling image moby/buildkit:buildx-stable-1 33.4s done
+#1 creating container buildx_buildkit_multi-platform-builder-auth
+#1 creating container buildx_buildkit_multi-platform-builder-auth 1.7s done
+#1 DONE 40.1s
+
+#2 [internal] load build definition from Dockerfile
+#2 transferring dockerfile: 139B 0.1s done
+#2 DONE 0.2s
+
+#3 [linux/arm64 internal] load metadata for docker.io/library/eclipse-temurin:25
+#3 ...
+
+#4 [auth] library/eclipse-temurin:pull token for registry-1.docker.io
+#4 DONE 0.0s
+
+#5 [linux/amd64 internal] load metadata for docker.io/library/eclipse-temurin:25
+#5 DONE 2.7s
+
+#3 [linux/arm64 internal] load metadata for docker.io/library/eclipse-temurin:25
+#3 DONE 2.8s
+
+#6 [internal] load .dockerignore
+#6 transferring context: 2B 0.1s done
+#6 DONE 0.1s
+
+#7 [linux/arm64 1/2] FROM docker.io/library/eclipse-temurin:25@sha256:ce2ef9d2d67a68de5e196d4de9d743327c44a10b57fe02ec39f572c652cacfd3
+#7 resolve docker.io/library/eclipse-temurin:25@sha256:ce2ef9d2d67a68de5e196d4de9d743327c44a10b57fe02ec39f572c652cacfd3 0.0s done
+#7 DONE 0.3s
+
+#8 [linux/amd64 1/2] FROM docker.io/library/eclipse-temurin:25@sha256:ce2ef9d2d67a68de5e196d4de9d743327c44a10b57fe02ec39f572c652cacfd3
+#8 resolve docker.io/library/eclipse-temurin:25@sha256:ce2ef9d2d67a68de5e196d4de9d743327c44a10b57fe02ec39f572c652cacfd3 0.0s done
+#8 ...
+
+#9 [internal] load build context
+#9 transferring context: 35.40MB 5.7s done
+#9 DONE 5.7s
+
+#8 [linux/amd64 1/2] FROM docker.io/library/eclipse-temurin:25@sha256:ce2ef9d2d67a68de5e196d4de9d743327c44a10b57fe02ec39f572c652cacfd3
+#8 ...
+
+#7 [linux/arm64 1/2] FROM docker.io/library/eclipse-temurin:25@sha256:ce2ef9d2d67a68de5e196d4de9d743327c44a10b57fe02ec39f572c652cacfd3
+#7 ...
+
+#8 [linux/amd64 1/2] FROM docker.io/library/eclipse-temurin:25@sha256:ce2ef9d2d67a68de5e196d4de9d743327c44a10b57fe02ec39f572c652cacfd3
+#8 ...
+
+#7 [linux/arm64 1/2] FROM docker.io/library/eclipse-temurin:25@sha256:ce2ef9d2d67a68de5e196d4de9d743327c44a10b57fe02ec39f572c652cacfd3
+#7 ...
+
+#8 [linux/amd64 1/2] FROM docker.io/library/eclipse-temurin:25@sha256:ce2ef9d2d67a68de5e196d4de9d743327c44a10b57fe02ec39f572c652cacfd3
+#8 ...
+
+#7 [linux/arm64 1/2] FROM docker.io/library/eclipse-temurin:25@sha256:ce2ef9d2d67a68de5e196d4de9d743327c44a10b57fe02ec39f572c652cacfd3
+#7 ...
+
+#8 [linux/amd64 1/2] FROM docker.io/library/eclipse-temurin:25@sha256:ce2ef9d2d67a68de5e196d4de9d743327c44a10b57fe02ec39f572c652cacfd3
+#8 ...
+
+#7 [linux/arm64 1/2] FROM docker.io/library/eclipse-temurin:25@sha256:ce2ef9d2d67a68de5e196d4de9d743327c44a10b57fe02ec39f572c652cacfd3
+#7 ...
+
+#8 [linux/amd64 1/2] FROM docker.io/library/eclipse-temurin:25@sha256:ce2ef9d2d67a68de5e196d4de9d743327c44a10b57fe02ec39f572c652cacfd3
+#8 ...
+
+#7 [linux/arm64 1/2] FROM docker.io/library/eclipse-temurin:25@sha256:ce2ef9d2d67a68de5e196d4de9d743327c44a10b57fe02ec39f572c652cacfd3
+#7 extracting sha256:7f2c2ca81066ea08302554fea387f3df4b714e7d98ea9c9d1994683b4668b905
+#7 extracting sha256:7f2c2ca81066ea08302554fea387f3df4b714e7d98ea9c9d1994683b4668b905 3.1s done
+#7 extracting sha256:cedc468d06b2395acfbe15d469c1c490e32250dfff923a25b48590254da93297 0.0s done
+#7 extracting sha256:d7539c903023b878605211d279dd584790436bbe4fea70e24763372d98a70407
+#7 ...
+
+#8 [linux/amd64 1/2] FROM docker.io/library/eclipse-temurin:25@sha256:ce2ef9d2d67a68de5e196d4de9d743327c44a10b57fe02ec39f572c652cacfd3
+#8 ...
+
+#7 [linux/arm64 1/2] FROM docker.io/library/eclipse-temurin:25@sha256:ce2ef9d2d67a68de5e196d4de9d743327c44a10b57fe02ec39f572c652cacfd3
+#7 extracting sha256:d7539c903023b878605211d279dd584790436bbe4fea70e24763372d98a70407 1.4s done
+#7 ...
+
+#8 [linux/amd64 1/2] FROM docker.io/library/eclipse-temurin:25@sha256:ce2ef9d2d67a68de5e196d4de9d743327c44a10b57fe02ec39f572c652cacfd3
+#8 ...
+
+#7 [linux/arm64 1/2] FROM docker.io/library/eclipse-temurin:25@sha256:ce2ef9d2d67a68de5e196d4de9d743327c44a10b57fe02ec39f572c652cacfd3
+#7 extracting sha256:5887e9e29a5af9faa2106e03c9074002998dacd8f6a54c049115cb9ac6426653
+#7 ...
+
+#8 [linux/amd64 1/2] FROM docker.io/library/eclipse-temurin:25@sha256:ce2ef9d2d67a68de5e196d4de9d743327c44a10b57fe02ec39f572c652cacfd3
+#8 ...
+
+#7 [linux/arm64 1/2] FROM docker.io/library/eclipse-temurin:25@sha256:ce2ef9d2d67a68de5e196d4de9d743327c44a10b57fe02ec39f572c652cacfd3
+#7 extracting sha256:5887e9e29a5af9faa2106e03c9074002998dacd8f6a54c049115cb9ac6426653 2.3s done
+#7 extracting sha256:4f4fb700ef54461cfa02571ae0db9a0dc1e0cdb5577484a6d75e68dc38e8acc1 0.0s done
+#7 extracting sha256:d3d52330382911cfc7a7d51a064d04f96004534616b83a6ddd4dcb0db8180225 0.0s done
+#7 DONE 66.8s
+
+#8 [linux/amd64 1/2] FROM docker.io/library/eclipse-temurin:25@sha256:ce2ef9d2d67a68de5e196d4de9d743327c44a10b57fe02ec39f572c652cacfd3
+#8 ...
+
+#10 [linux/arm64 2/2] COPY target/*.jar /app.jar
+#10 DONE 0.3s
+
+#8 [linux/amd64 1/2] FROM docker.io/library/eclipse-temurin:25@sha256:ce2ef9d2d67a68de5e196d4de9d743327c44a10b57fe02ec39f572c652cacfd3
+#8 extracting sha256:517b871c26eac1b24d47992388bcc20e2afba3643a89e8c4a3921bfa5e1d1d28
+#8 extracting sha256:517b871c26eac1b24d47992388bcc20e2afba3643a89e8c4a3921bfa5e1d1d28 2.2s done
+#8 extracting sha256:96aae9022e0e1b310a415e7c2ff1b435d853e8eabb2711cc70f4ad4010cc81b7 0.0s done
+#8 extracting sha256:85b0a4cf0a88328054735486011dcd4a033fd6179f48f3839fd26414e36add95
+#8 extracting sha256:85b0a4cf0a88328054735486011dcd4a033fd6179f48f3839fd26414e36add95 0.9s done
+#8 DONE 80.0s
+
+#8 [linux/amd64 1/2] FROM docker.io/library/eclipse-temurin:25@sha256:ce2ef9d2d67a68de5e196d4de9d743327c44a10b57fe02ec39f572c652cacfd3
+#8 extracting sha256:d7c588d012ed9a2ab20a13a8f1cb9fb478eec3732e3bb2c82d17cf0950348e11
+#8 extracting sha256:d7c588d012ed9a2ab20a13a8f1cb9fb478eec3732e3bb2c82d17cf0950348e11 2.4s done
+#8 extracting sha256:4f4fb700ef54461cfa02571ae0db9a0dc1e0cdb5577484a6d75e68dc38e8acc1 0.0s done
+#8 extracting sha256:b6955fba853e59e2340ffd06bd0cdfbb188455b49fdf1e3e3611c21584fb0bcd 0.0s done
+#8 DONE 82.4s
+
+#11 [linux/amd64 2/2] COPY target/*.jar /app.jar
+#11 DONE 0.3s
+
+#12 exporting to image
+#12 exporting layers
+#12 exporting layers 1.6s done
+#12 exporting manifest sha256:39d3a8c327d83916d98f04f1f9da47af9262269d27e4d44791db31a41623ec2f 0.0s done
+#12 exporting config sha256:5f90182dd079d403199b663367ae62d913cb990a82f83d7cb3c018ca1940f782 0.0s done
+#12 exporting attestation manifest sha256:7ffaad0e8e76c32e30312e235f5165c4b10f3dd416d432e748f9d7d9ab948c34 0.0s done
+#12 exporting manifest sha256:de31a7e97055a1fc99e350838f6b535717d8c17acebe10818f988d064eaa7b7d 0.0s done
+#12 exporting config sha256:88cd73ac65454120b9f7c9a0ac11292d36b062f75d7c67186070ae959c7c6ea3 0.0s done
+#12 exporting attestation manifest sha256:573aa437311877399a3c580695d137a615baaccf3a52f03195f0e79b29adbfb7 0.0s done
+#12 exporting manifest list sha256:a098f7fdc18474655e184e9378aaca41107b5b240a9e556da2570281270fdd65 0.0s done
+#12 pushing layers
+#12 ...
+
+#13 [auth] dody16/auth:pull,push token for registry-1.docker.io
+#13 DONE 0.0s
+
+#12 exporting to image
+#12 pushing layers 462.9s done
+#12 pushing manifest for docker.io/dody16/auth:latest@sha256:a098f7fdc18474655e184e9378aaca41107b5b240a9e556da2570281270fdd65
+#12 ...
+
+#14 [auth] dody16/auth:pull,push token for registry-1.docker.io
+#14 DONE 0.0s
+
+#12 exporting to image
+#12 pushing manifest for docker.io/dody16/auth:latest@sha256:a098f7fdc18474655e184e9378aaca41107b5b240a9e556da2570281270fdd65 6.3s done
+#12 pushing layers
+#12 pushing layers 1.3s done
+#12 pushing manifest for docker.io/dody16/auth:1@sha256:a098f7fdc18474655e184e9378aaca41107b5b240a9e556da2570281270fdd65
+#12 pushing manifest for docker.io/dody16/auth:1@sha256:a098f7fdc18474655e184e9378aaca41107b5b240a9e556da2570281270fdd65 3.2s done
+#12 DONE 475.5s
+[Pipeline] sh
++ docker buildx rm --force multi-platform-builder-auth
+multi-platform-builder-auth removed
+[Pipeline] }
+[Pipeline] // withCredentials
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // node
+[Pipeline] End of Pipeline
+Finished: SUCCESS
