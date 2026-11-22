@@ -8,7 +8,7 @@ A [página de apresentação](https://insper.github.io/platform/pt/2026.2/exerci
 | [Gargalos](https://insper.github.io/platform/pt/2026.2/exercises/bottlenecks/) | 2 feitos por mim: cache com Redis e observabilidade | [Bottlenecks](bottlenecks.md) |
 | [API de Produtos](https://insper.github.io/platform/pt/2026.2/exercises/product/) | não feita | o projeto do grupo não tem serviço de produtos; o catálogo da loja fica no front-end ([Front-end](web.md)) |
 | [API de Pedidos](https://insper.github.io/platform/pt/2026.2/exercises/order/) | não feita | as compras da loja ficam no navegador ([Front-end](web.md)) |
-| [Jenkins](https://insper.github.io/platform/pt/2026.2/exercises/jenkins/) | feito pelo grupo (Douglas) | [CI/CD](cicd.md); ainda sem pipeline do `account-service` e do `exchange-service` |
+| [Jenkins](https://insper.github.io/platform/pt/2026.2/exercises/jenkins/) | Jenkins do grupo (Douglas); pipelines do `account-service` e do `exchange-service` feitos por mim | [CI/CD](cicd.md) · `Jenkinsfile` de cada repositório |
 | [MiniKube](https://insper.github.io/platform/pt/2026.2/exercises/minikube/) | feito pelo grupo (Douglas), direto no EKS | [EKS e load test](eks.md): os manifestos de `k8s/` incluem o Account e o Exchange |
 
 ## Hands-on usados no projeto

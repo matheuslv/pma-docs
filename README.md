@@ -1,6 +1,6 @@
 # pma-docs
 
-Documentação individual (Matheus) do projeto Store, da disciplina Plataformas, Microsserviços, DevOps e APIs (Insper, 2026.2).
+Documentação individual (Matheus Lopes Vilar) do projeto Store, da disciplina Plataformas, Microsserviços, DevOps e APIs (Insper, 2026.2).
 
 Site: https://matheuslv.github.io/pma-docs/
 
